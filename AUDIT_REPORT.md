@@ -14,7 +14,7 @@
 | 4. Cosine similarity | Pass | Pairwise cosine similarity is calculated and retained as a sparse matrix; its dimensions are printed. |
 | 5. Recommendation function | Pass | The CLI calls the function for Avatar, The Dark Knight Rises, and Toy Story, and checks that each selected item is excluded from its recommendations. |
 | 6. Streamlit interface | Automated UI flow verified; browser/live verification pending | Streamlit AppTest confirmed the selector, recommendation-count slider, button, no premature results, and recommendations after clicking. A public browser deployment remains pending. |
-| 7. GitHub repository | Pending account selection/push | Local files are ready for Git. The GitHub connector reports ShivamGrover-05 as its active login, so no push was made to the wrong account. Select/connect kananpandey before publishing. |
+| 7. GitHub repository | Pass (private repository created; all nine project files committed on main) | The authenticated GitHub login is kananpandey. Repository: [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). The root contains the code, dataset, README, audit report, and configuration files. Grant reviewer access or change visibility if course review requires it. |
 | 8. Render deployment | Configuration prepared; deployment pending | render.yaml defines the service, build command, and Streamlit start command. A Render service still needs to be created from the correct GitHub repository. |
 | 9. Deployed app validation | Pending deployment | No public Render URL is available yet; once deployed, verify the URL and recommendation flow, then record that URL in the README. |
 
@@ -54,4 +54,4 @@ The verification command was executed successfully with Python 3.11.9. It report
 The Streamlit application itself and a public Render deployment have not yet been browser-tested.
 ## Submission readiness
 
-The core assignment implementation and deployment configuration are present. The GitHub publication, Render service, live URL, and final deployed-app validation are external steps that remain incomplete until the correct GitHub identity and Render account are available.
+The core assignment implementation and deployment configuration are present, and GitHub publication is complete in Kanan Pandey's private repository. The Render service, live URL, and final deployed-app validation remain incomplete.
