@@ -16,7 +16,7 @@ This project builds a content-based movie recommender from plot overviews. It cl
 | 4 | Cosine similarity | Computes and stores the pairwise cosine similarity matrix; the implementation keeps it sparse to reduce memory use. |
 | 5 | Recommendation function | recommend(item_name, top_n=5, ...) ranks similar movies and excludes the selected movie. The CLI demonstrates three different titles. |
 | 6 | Simple app interface | app.py provides a movie selector, recommendation-count control, generate button, and readable results. |
-| 7 | Git and GitHub | Local Git setup is prepared. Create/push the repository under the student's GitHub account after that account is selected in the GitHub connection. |
+| 7 | Git and GitHub | Complete: all nine project files are committed on `main` in [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). The repository is private; grant reviewer access or change visibility if the course requires it. |
 | 8 | Render deployment | render.yaml defines the Streamlit web service and start command. Connect the GitHub repository to Render to deploy. |
 | 9 | Final validation | Local command-line recommendations are checked. Add the live Render URL here after deployment: **Pending deployment**. |
 
@@ -65,9 +65,9 @@ The app runs locally at http://localhost:8501.
 
 This is a content-based method: it uses plot text and does not use collaborative filtering.
 
-## GitHub setup
+## GitHub repository
 
-After confirming that the GitHub connection is using the student's kananpandey account, create a repository named GenAI-Task20-Kanan-Pandey, then set it as the origin remote and push the main branch. Do not push this project through a different account.
+The project files are committed on the `main` branch in [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). This repository is private. If a reviewer needs access, grant access to them or change the repository visibility if the course requires it.
 
 ## Render deployment
 
