@@ -4,7 +4,7 @@
 **Dataset:** TMDB 5000 Movie Dataset  
 **Dataset source:** [Kaggle — TMDB 5000 Movie Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
 
-This project builds a content-based movie recommender from plot overviews. It cleans the text, creates TF-IDF vectors, compares movies with cosine similarity, and provides a small Streamlit interface.
+This project builds a content-based movie recommender from plot overviews. It cleans the text, creates TF-IDF vectors, compares movies with cosine similarity, and provides a Streamlit interface.
 
 ## Assignment checklist
 
@@ -16,9 +16,9 @@ This project builds a content-based movie recommender from plot overviews. It cl
 | 4 | Cosine similarity | Computes and stores the pairwise cosine similarity matrix; the implementation keeps it sparse to reduce memory use. |
 | 5 | Recommendation function | recommend(item_name, top_n=5, ...) ranks similar movies and excludes the selected movie. The CLI demonstrates three different titles. |
 | 6 | Simple app interface | app.py provides a movie selector, recommendation-count control, generate button, and readable results. |
-| 7 | Git and GitHub | Complete: all nine project files are committed on `main` in [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). The repository is private; grant reviewer access or change visibility if the course requires it. |
-| 8 | Render deployment | render.yaml defines the Streamlit web service and start command. Connect the GitHub repository to Render to deploy. |
-| 9 | Final validation | Local command-line recommendations are checked. Add the live Render URL here after deployment: **Pending deployment**. |
+| 7 | Git and GitHub | Complete: all nine project files are committed on main in [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). The repository is private; grant reviewer access or change visibility if the course requires it. |
+| 8 | Render deployment | Complete: the Streamlit service is deployed from the GitHub main branch. |
+| 9 | Final validation | Complete: the public app opened successfully and generated recommendations for Avatar and Toy Story. Each result list excluded the selected movie. |
 
 ## Dataset details
 
@@ -67,12 +67,16 @@ This is a content-based method: it uses plot text and does not use collaborative
 
 ## GitHub repository
 
-The project files are committed on the `main` branch in [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). This repository is private. If a reviewer needs access, grant access to them or change the repository visibility if the course requires it.
+The project files are committed on the main branch in [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). This repository is private. If a reviewer needs access, grant access to them or change the repository visibility if the course requires it.
 
 ## Render deployment
 
-The included render.yaml uses the repository root, installs requirements.txt, and starts Streamlit on Render's assigned port. In Render, create a Blueprint from the GitHub repository and wait for the service to finish deploying. Then open the public URL, test the selector and recommendation button, and replace **Pending deployment** in this README with the working URL.
+**Live application:** [https://genai-task20-recommendation-system.onrender.com](https://genai-task20-recommendation-system.onrender.com)
+
+The service is connected to the GitHub repository's main branch. Render builds it with the included requirements and starts the Streamlit app on Render's assigned port. The deployed page was checked in a browser, and its recommendation flow was exercised with multiple movies.
+
+The service uses Render's free instance. After a period without activity, it may spin down; the first visit after that can take 50 seconds or more to respond.
 
 ## Verification
 
-See AUDIT_REPORT.md for the checks run locally and any remaining external steps.
+See AUDIT_REPORT.md for the requirement-by-requirement review, local run results, and public app validation.
