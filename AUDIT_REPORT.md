@@ -6,17 +6,17 @@
 
 ## Requirement-by-requirement review
 
-| Task | Result | Evidence / remaining action |
+| Task | Result | Evidence |
 |---|---|---|
 | 1. Load and understand dataset | Pass | Pandas inspection prints raw shape, columns, first five rows, data types, nulls, and identifies title as the item identifier and overview as the text feature. |
-| 2. Text preprocessing | Pass | Missing overviews are filled; the clean_text column is lowercased, stripped of punctuation/numbers/special characters, whitespace-normalized, and filtered for English stopwords. |
+| 2. Text preprocessing | Pass | Missing overviews are filled; clean_text is lowercased, stripped of punctuation/numbers/special characters, whitespace-normalized, and filtered for English stopwords. |
 | 3. TF-IDF | Pass | Uses TfidfVectorizer with max_features=5000 and ngram_range=(1, 2); the command-line run prints the resulting matrix dimensions. |
 | 4. Cosine similarity | Pass | Pairwise cosine similarity is calculated and retained as a sparse matrix; its dimensions are printed. |
 | 5. Recommendation function | Pass | The CLI calls the function for Avatar, The Dark Knight Rises, and Toy Story, and checks that each selected item is excluded from its recommendations. |
-| 6. Streamlit interface | Automated UI flow verified; browser/live verification pending | Streamlit AppTest confirmed the selector, recommendation-count slider, button, no premature results, and recommendations after clicking. A public browser deployment remains pending. |
-| 7. GitHub repository | Pass (private repository created; all nine project files committed on main) | The authenticated GitHub login is kananpandey. Repository: [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). The root contains the code, dataset, README, audit report, and configuration files. Grant reviewer access or change visibility if course review requires it. |
-| 8. Render deployment | Configuration prepared; deployment pending | render.yaml defines the service, build command, and Streamlit start command. A Render service still needs to be created from the correct GitHub repository. |
-| 9. Deployed app validation | Pending deployment | No public Render URL is available yet; once deployed, verify the URL and recommendation flow, then record that URL in the README. |
+| 6. Streamlit interface | Pass | The public app exposes a movie selector, recommendation-count slider, button, and readable recommendation cards. Live browser checks generated results for multiple selections. |
+| 7. GitHub repository | Pass | The project is committed on main in Kanan Pandey's private repository: [kananpandey/genai-task20-recommendation-system](https://github.com/kananpandey/genai-task20-recommendation-system). If course reviewers need direct access, grant it or change the repository visibility according to course rules. |
+| 8. Render deployment | Pass | Render reports the service as live at [https://genai-task20-recommendation-system.onrender.com](https://genai-task20-recommendation-system.onrender.com). It deployed from main; the first deployment built commit 68ed737. |
+| 9. Deployed app validation | Pass | The public page loaded. Clicking Recommend Movies for Avatar and Toy Story returned five recommendations each; neither selected title appeared in its own results. The default The Dark Knight Rises view also displayed five recommendations. |
 
 ## Dataset facts checked
 
@@ -37,7 +37,7 @@ Run:
 python recommender.py
 ~~~
 
-The CLI should inspect and preprocess the data, print TF-IDF and similarity dimensions, show recommendations for three titles, and exercise invalid-title, blank-title, and empty-overview handling. The sparse similarity matrix is used to reduce memory consumption while still representing all pairwise cosine scores.
+The CLI inspects and preprocesses the data, prints TF-IDF and similarity dimensions, shows recommendations for three titles, and exercises invalid-title, blank-title, and empty-overview handling. The sparse similarity matrix reduces memory use while representing pairwise cosine scores.
 
 The Streamlit app can be started with:
 
@@ -45,13 +45,20 @@ The Streamlit app can be started with:
 streamlit run app.py
 ~~~
 
-A successful command start is not the same as a browser or production deployment check. The live URL and end-to-end checks remain pending until deployment is completed.
-
-### Run result
+## Local run result
 
 The verification command was executed successfully with Python 3.11.9. It reported a raw dataset shape of (4,803, 20), removed three duplicate titles, replaced the three missing overviews, produced a TF-IDF matrix of (4,800, 5,000), and produced a sparse cosine-similarity matrix of (4,800, 4,800) with 6,518,148 stored non-zero scores (about 74.61 MB). It returned five recommendations for Avatar, The Dark Knight Rises, and Toy Story, excluded each selected movie from its own result list, and handled invalid, blank, and empty-overview cases.
 
-The Streamlit application itself and a public Render deployment have not yet been browser-tested.
+## Public deployment validation
+
+- Render deployment status: **Deploy succeeded | Live**
+- Public URL: [https://genai-task20-recommendation-system.onrender.com](https://genai-task20-recommendation-system.onrender.com)
+- The page initially showed Streamlit's running state while loading the dataset and similarity data, then displayed the selector and recommendation controls.
+- Avatar produced five results, beginning with Apollo 18; Avatar was not among the results.
+- Toy Story produced five results, beginning with Toy Story 3; Toy Story was not among the results.
+- The default The Dark Knight Rises view showed five recommendations and did not include The Dark Knight Rises itself.
+- Render's free instance may spin down after inactivity, so a later first visit can take longer to respond.
+
 ## Submission readiness
 
-The core assignment implementation and deployment configuration are present, and GitHub publication is complete in Kanan Pandey's private repository. The Render service, live URL, and final deployed-app validation remain incomplete.
+The assignment implementation is complete, the repository is published on GitHub, and the public Render app and recommendation interaction were verified. The repository is private, so confirm whether the course reviewer needs GitHub access; the project ZIP can also be submitted through the course portal.
