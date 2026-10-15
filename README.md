@@ -18,7 +18,7 @@ This project recommends movies with plot overviews. It cleans the overview text,
 | 6 | Build a simple interface | `app.py` provides a movie selector, recommendation-count control, button, and results. |
 | 7 | Use Git and GitHub | Project source is maintained in the [GitHub repository](https://github.com/kananpandey/genai-task20-recommendation-system). |
 | 8 | Deploy on Render | Render service configuration is included in `render.yaml`. |
-| 9 | Validate the app | The audit report records a browser check of the deployed recommendation flow on October 12, 2026. |
+| 9 | Include the deployed application link | The public application URL is listed below. |
 
 ## Dataset
 
@@ -38,7 +38,6 @@ The project removes three duplicate titles and replaces missing overviews with e
 - `movies.csv` — dataset
 - `requirements.txt` — pinned Python dependencies
 - `render.yaml` and `.python-version` — Render service and runtime configuration
-- `AUDIT_REPORT.md` — requirement-by-requirement review and verification record
 
 ## Run locally
 
@@ -66,22 +65,10 @@ This is a content-based method: it uses plot text and does not use collaborative
 
 ## GitHub repository
 
-[Open the project repository](https://github.com/kananpandey/genai-task20-recommendation-system). The project files are committed on the `main` branch.
+[Open the public project repository](https://github.com/kananpandey/genai-task20-recommendation-system). The project files are committed on the `main` branch.
 
 ## Render deployment
 
 **Application URL:** [https://genai-task20-recommendation-system.onrender.com](https://genai-task20-recommendation-system.onrender.com)
 
-The audit report records a successful deployment and browser validation on October 12, 2026. The app returned recommendations for Avatar and Toy Story and excluded each selected movie from its own results. Render's free instance may spin down after inactivity, so the first visit may take longer to load.
-
-## Local verification
-
-Run:
-
-```powershell
-python recommender.py
-```
-
-The recorded run inspected and preprocessed the dataset, produced a TF-IDF matrix of (4,800, 5,000), computed a sparse cosine-similarity matrix of (4,800, 4,800), and generated recommendations for Avatar, The Dark Knight Rises, and Toy Story. It also checked self-exclusion, invalid and blank titles, and movies with empty overviews.
-
-See [AUDIT_REPORT.md](AUDIT_REPORT.md) for the full verification record.
+The app provides a movie selector and a **Recommend Movies** button. Select a movie and click the button to view similar titles. A selected movie is excluded from its own recommendations. Render's free instance may spin down after inactivity, so the first visit may take longer to load.
